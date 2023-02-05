@@ -200,7 +200,10 @@ def getValidActions(state):
         hand_score = 0
     else:
         hand_type = get_hand_type(cards_in_pre_hand)
-        hand_score = np.max(cards_in_pre_hand) + 1
+        if cards_in_pre_hand.shape[0] != 0:
+            hand_score = np.max(cards_in_pre_hand) + 1
+        else:
+            hand_score = 0
 
     if arr_card.shape[0] == 0 or hand_type == -1:
         validActions[0] = 1
