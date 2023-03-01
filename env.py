@@ -409,8 +409,8 @@ def one_game_numba(p0, list_other, per_player, per1, per2, per3, p1, p2, p3):
     p0_idx = np.where(list_other==-1)[0][0]
     cards_in_hand = np.full(0, 0, dtype=np.int64)
     for p_idx in range(4):
-        env[52] = p0_idx
-        env[57] = p0_idx
+        env[52] = p_idx
+        env[57] = p_idx
         state = getAgentState(env, cards_in_hand)
         if list_other[p_idx] == -1:
             action, per_player = p0(state, per_player)
@@ -470,8 +470,8 @@ def one_game_normal(p0, list_other, per_player, per1, per2, per3, p1, p2, p3):
     p0_idx = np.where(list_other==-1)[0][0]
     cards_in_hand = np.full(0, 0, dtype=np.int64)
     for p_idx in range(4):
-        env[52] = p0_idx
-        env[57] = p0_idx
+        env[52] = p_idx
+        env[57] = p_idx
         state = getAgentState(env, cards_in_hand)
         if list_other[p_idx] == -1:
             action, per_player = p0(state, per_player)
